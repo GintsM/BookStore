@@ -1,4 +1,4 @@
-import Button from './Button';
+import Button from './Button';// eslint-disable-line
 
 const Book = () => (
   <div className="book">
