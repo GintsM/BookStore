@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './index.css';
 import Nav from './components/nav';
-import Books from './redux/books/books';
-import Categories from './redux/categories/categories';
+import Books from './components/Books';
+import Categories from './components/Categories';
 
 ReactDOM.render(
   <React.StrictMode>

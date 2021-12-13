@@ -1,6 +1,6 @@
-import Button from '../../components/Button';
+import Button from './Button';
 
-const book = () => (
+const Book = () => (
   <div className="book">
     <div className="title">
       <article>
@@ -24,4 +24,4 @@ const book = () => (
   </div>
 );
 
-export default book;
+export default Book;
