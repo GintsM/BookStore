@@ -2,7 +2,6 @@ import Button from './Button';// eslint-disable-line
 
 const Book = (props) => {
   const hihihi = props;
-  console.log(hihihi);
   return (
     <div className="book">
       <div className="title">

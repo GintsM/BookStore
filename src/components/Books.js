@@ -8,6 +8,7 @@ const Books = () => {
     <div>
       {numCakes.map((task) => (
         <Book
+          id={task.id}
           key={task.id}
           title={task.title}
         />
