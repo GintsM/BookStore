@@ -1,19 +1,19 @@
-// import { useDispatch } from 'react-redux';
-// import { removeBook } from '../redux/books/books';
+import { useDispatch } from 'react-redux';
+import { removeBook } from '../redux/books/books';
 
-// const dispatch = useDispatch();
+const dispatch = () => useDispatch();
 
-// const bookToRemove = (e) => {
-//   const smbook = {
-//     id: e.target.id,
-//   };
+const bookToRemove = (e) => {
+  const smbook = {
+    id: e.target.id,
+  };
 
-//   // dispatch an action and pass it the smbook object (your action's payload)
-//   dispatch(removeBook(smbook));
-// };
+  // dispatch an action and pass it the smbook object (your action's payload)
+  dispatch(removeBook(smbook));
+};
 
 const Button = () => (
-  <button type="button" onClick={() => console.log('hey')}>
+  <button type="button" onClick={bookToRemove}>
     Remove Book
   </button>
 );
