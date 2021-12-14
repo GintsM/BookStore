@@ -12,10 +12,14 @@ const bookToRemove = (e) => {
   dispatch(removeBook(smbook));
 };
 
-const Button = () => (
-  <button type="button" onClick={bookToRemove}>
-    Remove Book
-  </button>
-);
+const Button = (props) => {
+  const id = props;
+  console.log(id, ' id');
+  return (
+    <button type="button" onClick={bookToRemove} id={id.id}>
+      Remove Book
+    </button>
+  );
+};
 
 export default Button;

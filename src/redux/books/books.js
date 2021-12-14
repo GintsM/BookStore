@@ -20,10 +20,9 @@ export const removeBook = (payload) => ({
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_BOOK:
-      console.log(state, ' State');// to show what added and what removed
       return [...state, action.payload];
     case REMOVE_BOOK:
-      return state;// .filter((book) => book.id !== id);// eslint-disable-line
+      return state.filter((book) => book.id !== id);// eslint-disable-line
     default:
       return state;
   }
