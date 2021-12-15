@@ -4,6 +4,7 @@ import Book from './book';
 
 const Books = () => {
   const numCakes = useSelector((state) => state.booksReducer);
+  console.log(numCakes);
   return (
     <div>
       {numCakes.map((task) => (

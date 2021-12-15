@@ -11,6 +11,8 @@ const Button = (props) => {
 
     // dispatch an action and pass it the smbook object (your action's payload)
     dispatch(removeBook(smbook));
+
+    // Here must to make API Call with METHOD: DELETE
   };
   const id = props;
   // console.log(id, ' id');

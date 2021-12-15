@@ -1,11 +1,7 @@
 const ADD_BOOK = 'ADD_BOOK';
 const REMOVE_BOOK = 'REMOVE_BOOK';
+const FETCH_BOOK = 'FETCH_BOOK';
 const initialState = [];
-// {
-//   id: '',
-//   title: '',
-//   author: '',
-// };
 
 export const addBook = (payload) => ({
   type: ADD_BOOK,
@@ -17,13 +13,20 @@ export const removeBook = (payload) => ({
   payload,
 });
 
+export const displayBooks = (payload) => ({
+  type: FETCH_BOOK,
+  payload,
+});
+
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_BOOK:
       return [...state, action.payload];
     case REMOVE_BOOK:
-      console.log(state);
-      return state.filter((book) => book.id !== action.payload.id);// eslint-disable-line
+      return state.filter((book) => book.id !== action.payload.id);
+    case FETCH_BOOK:
+      console.log(action.payload, 'kokok');
+      return [...state, action.payload];
     default:
       return state;
   }
