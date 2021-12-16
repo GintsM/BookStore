@@ -1,4 +1,4 @@
-import Button from './Button';// eslint-disable-line
+import Button from './Button';
 
 const Book = (props) => {
   const hihihi = props;
