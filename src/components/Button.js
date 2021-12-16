@@ -1,23 +1,11 @@
 import { useDispatch } from 'react-redux';
-import { removeBook } from '../redux/books/books';
+import { removeBookFromApi } from '../redux/books/books';
 
 const Button = (props) => {
   const dispatch = useDispatch();
-
-  const bookToRemove = (e) => {
-    const smbook = {
-      id: e.target.id,
-    };
-
-    // dispatch an action and pass it the smbook object (your action's payload)
-    dispatch(removeBook(smbook));
-
-    // Here must to make API Call with METHOD: DELETE
-  };
   const id = props;
-  // console.log(id, ' id');
   return (
-    <button type="button" onClick={bookToRemove} id={id.id}>
+    <button type="button" onClick={() => dispatch(removeBookFromApi(id.id))} id={id.id}>
       Remove Book
     </button>
   );

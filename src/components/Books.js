@@ -1,22 +1,26 @@
-import { useSelector } from 'react-redux';
-import AddBooks from './form';
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import Form from './form';
 import Book from './book';
+import { getBookFromApi } from '../redux/books/books';
 
 const Books = () => {
+  const dispatch = useDispatch();
   const books = useSelector((state) => state.booksReducer);
-  const toLoop = Object.keys(books[books.length - 1]);
-  const open = books[books.length - 1];
+  useEffect(() => {
+    dispatch(getBookFromApi());
+  }, []);
   return (
     <div>
-      {toLoop.map((key) => (
+      {books.map((book) => (
         <Book
-          id={key}
-          key={key}
-          title={open[key][0].title}
-          category={open[key][0].category}
+          id={book.item_id}
+          key={book.item_id}
+          title={book.title}
+          category={book.category}
         />
       ))}
-      <AddBooks />
+      <Form />
     </div>
   );
 };
