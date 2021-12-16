@@ -2,3 +2,19 @@ body {
   margin: 0;
   background-color: blanchedalmond;
 }
+
+.book {
+  display: flex;
+  border: 1px solid yellowgreen;
+  padding-left: 1em;
+}
+
+.title {
+  width: 50%;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+}

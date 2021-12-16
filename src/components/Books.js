@@ -1,20 +1,22 @@
 import { useSelector } from 'react-redux';
-import Form from './form';
+import AddBooks from './form';
 import Book from './book';
 
 const Books = () => {
-  const numCakes = useSelector((state) => state.booksReducer);
-  console.log(numCakes);
+  const books = useSelector((state) => state.booksReducer);
+  const toLoop = Object.keys(books[books.length - 1]);
+  const open = books[books.length - 1];
   return (
     <div>
-      {numCakes.map((task) => (
+      {toLoop.map((key) => (
         <Book
-          id={task.id}
-          key={task.id}
-          title={task.title}
+          id={key}
+          key={key}
+          title={open[key][0].title}
+          category={open[key][0].category}
         />
       ))}
-      <Form />
+      <AddBooks />
     </div>
   );
 };

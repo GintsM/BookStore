@@ -1,7 +1,16 @@
 const ADD_BOOK = 'ADD_BOOK';
 const REMOVE_BOOK = 'REMOVE_BOOK';
 const FETCH_BOOK = 'FETCH_BOOK';
-const initialState = [];
+const initialState = [
+  {
+    item1: [
+      {
+        title: '',
+        category: '',
+      },
+    ],
+  },
+];
 
 export const addBook = (payload) => ({
   type: ADD_BOOK,
@@ -25,7 +34,6 @@ const reducer = (state = initialState, action) => {
     case REMOVE_BOOK:
       return state.filter((book) => book.id !== action.payload.id);
     case FETCH_BOOK:
-      console.log(action.payload, 'kokok');
       return [...state, action.payload];
     default:
       return state;
